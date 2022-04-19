@@ -4,7 +4,7 @@ import client from '../client'
 
 const Index = ({posts}) => {
     return (
-      <div>
+      <>
         <h1>Welcome to a PublicRepublic!</h1>
         {posts.length > 0 && posts.map(
           ({ _id, title = '', slug = '', publishedAt = '' }) =>
@@ -17,13 +17,13 @@ const Index = ({posts}) => {
               </li>
             )
         )}
-      </div>
+      </>
     )
 }
 
 export async function getServerSideProps() {
     const posts = await client.fetch(groq`
-      *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
+      *[_type == "post"] | order(publishedAt desc)
     `)
     return {
       props: {

@@ -1,13 +1,20 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+/* TailWind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Carousel styles */
 @layer utilities {
   .embla {
       position: relative;
       background-color: none;
       padding: 20px;
-      width: 85%;
+      width: 86%;
       margin-left: auto;
       margin-right: auto;
     }
@@ -93,5 +100,8 @@
     
     .embla__button--next {
       right: 27px;
+    }
+    .fulik {
+      background-image: url('https://cdn.sanity.io/images/9n9rrysx/production/89bd8da62594ace4223ee4169be5c54210bc6f32-2400x3000.jpg');
     }
   }

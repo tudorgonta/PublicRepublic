@@ -2,11 +2,11 @@ import Link from "next/link"
 
 const Navbar = () => {
   return (
-    <nav>
-        <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-            <li><Link href="/gallery">Gallery</Link></li>
+    <nav className="">
+        <ul className="flex flex-row justify-center font-Roboto">
+            <li className="mr-4 hover:underline"><Link href="/" className=''>Home</Link></li>
+            <li className="mr-4 hover:underline"><Link href="/contact">Contact</Link></li>
+            <li className="hover:underline"><Link href="/gallery">Gallery</Link></li>
         </ul>
     </nav>
   )

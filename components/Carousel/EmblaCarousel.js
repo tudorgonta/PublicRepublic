@@ -10,7 +10,7 @@ function urlFor (source) {
 
 const EmblaCarousel = ({ category }) => {
   const [viewportRef, embla] = useEmblaCarousel({
-    slidesToScroll: 2,
+    slidesToScroll: 3,
     skipSnaps: false
   });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
@@ -44,7 +44,7 @@ const EmblaCarousel = ({ category }) => {
                 />
                 <a
                   href="/"
-                  className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10"
+                  className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-slate-800/75 z-10"
                 >
                   <h3 className="text-white py-6 px-3 mx-auto text-xl">
                     {title}

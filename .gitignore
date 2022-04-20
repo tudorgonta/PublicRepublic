@@ -113,5 +113,5 @@ exports
 build
 .strapi-updater.json
 .vercel
-.next
+.next/*
 .vscode

@@ -30,7 +30,6 @@ const Post = ({post}) => {
     title = 'Missing title',
     name = 'Missing name',
     categories,
-    authorImage,
     body = []
   } = post
   return (

@@ -47,16 +47,6 @@ const Post = ({post}) => {
             {categories.map(category => <li key={category}>{category}</li>)}
           </ul>
         )}
-        {authorImage && (
-          <div>
-            <img
-              src={urlFor(authorImage)
-                .width(50)
-                .url()}
-              alt={`${name}'s picture`}
-            />
-          </div>
-        )}
         <PortableText
           value={body}
           components={ptComponents}
@@ -70,11 +60,9 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   "name": author->name,
   "categories": categories[]->title,
-  "authorImage": author->image,
   body
 }`
 export async function getServerSideProps(context) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params
   const post = await client.fetch(query, { slug })
   return {

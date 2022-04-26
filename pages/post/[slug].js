@@ -28,7 +28,6 @@ const ptComponents = {
 const Post = ({post}) => {
   const {
     title = 'Missing title',
-    name = 'Missing name',
     categories,
     body = []
   } = post

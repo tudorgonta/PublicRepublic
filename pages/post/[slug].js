@@ -39,7 +39,6 @@ const Post = ({post}) => {
       </Head>
       <article>
         <h1>{title}</h1>
-        <span>By {name}</span>
         {categories && (
           <ul>
             Posted in

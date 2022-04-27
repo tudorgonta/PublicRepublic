@@ -12,7 +12,6 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>PublicRepublic</title>
       </Head>
-      <Navig />
       <div className="max-w-screen-xl m-auto">
         <h1 className="text-6xl font-Monsieur text-center my-20">PublicRepublic</h1>
         <Navbar />

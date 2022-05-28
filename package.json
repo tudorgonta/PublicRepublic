@@ -12,12 +12,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fancyapps/ui": "^4.0.27",
     "@portabletext/react": "^1.0.6",
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
     "embla-carousel-react": "^6.2.0",
     "groq": "^2.29.3",
     "next": "^12.1.5",
+    "nprogress": "^0.2.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },

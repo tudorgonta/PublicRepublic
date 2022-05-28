@@ -2,7 +2,7 @@
 
 <h2>ToDo:</h2>
 <ol>
-  <li>Add image loader</li>
+  <li><strike>Add image loader</strike></li>
   <li>Import image prop from next with sanity to resolve image loading time + bandwitch</li>
   <li><strike>Edit hover category</strike></li>
   <li>List Category images in mosaic or grid.</li>

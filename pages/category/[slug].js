@@ -1,7 +1,12 @@
 import groq from 'groq'
 import client from '../../client'
 import Head from 'next/head'
+import imageUrlBuilder from '@sanity/image-url'
+import Fancybox from '../../components/Fancybox';
 
+function urlFor (source) {
+  return imageUrlBuilder(client).image(source)
+}
 
 const Category = ({category, slug}) => {
   return (
@@ -10,9 +15,27 @@ const Category = ({category, slug}) => {
         <title>PR - {slug}</title>
       </Head>
       <article>
-      {category.map(({title}, index) => (
-        <h1 key={index}>{title}</h1>
-      ))}
+        <ul className='categ'>
+        <Fancybox options={{ infinite: false }}>
+          {category.map(({title, postImage}, index) => (
+            <li className='categ-item'>
+              <a 
+                data-fancybox="gallery"
+                data-src={urlFor(postImage).url()} 
+                data-caption="A Toyota Previa covered in graffiti"
+                >
+                <img
+                  key={index}
+                  src={urlFor(postImage).url()}
+                  alt={title}
+                  loading="lazy"
+                />
+              </a>
+            </li>
+          ))}
+          </Fancybox>
+          <li></li>
+        </ul>
       </article>
     </>
   )

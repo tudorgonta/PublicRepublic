@@ -2,7 +2,6 @@ import groq from 'groq'
 import client from '../../client'
 import Head from 'next/head'
 import imageUrlBuilder from '@sanity/image-url'
-import Fancybox from '../../components/Fancybox';
 
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
@@ -16,7 +15,6 @@ const Category = ({category, slug}) => {
       </Head>
       <article>
         <ul className='categ'>
-        <Fancybox options={{ infinite: false }}>
           {category.map(({title, postImage}, index) => (
             <li className='categ-item'>
               <a 
@@ -33,7 +31,6 @@ const Category = ({category, slug}) => {
               </a>
             </li>
           ))}
-          </Fancybox>
           <li></li>
         </ul>
       </article>

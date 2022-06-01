@@ -54,6 +54,12 @@ const Category = ({category, slug}) => {
         toggler={lightboxController.toggler}
         sources={images}
         slide={lightboxController.slide}
+        types={
+          [
+            ...new Array(photos.length).fill('image')
+          ]
+        }
+        key={lightboxController.key}
       />
     </>
   )

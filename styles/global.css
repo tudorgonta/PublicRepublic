@@ -142,7 +142,7 @@
     .categ-item {
       height: 40vh;
       flex-grow: 1;
-      margin: 2vmin;
+      margin: 0.3vmin;
     }
     
     .categ-item:last-child {
@@ -154,7 +154,7 @@
       min-width: 100%;
       object-fit: cover;
       vertical-align: bottom;
-      border-radius: 1vmin;
+      border-radius: 0.3vmin;
     }
     
     @media (max-aspect-ratio: 1/1) {

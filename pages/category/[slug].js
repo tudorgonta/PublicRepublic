@@ -3,37 +3,58 @@ import client from '../../client'
 import Head from 'next/head'
 import imageUrlBuilder from '@sanity/image-url'
 
+import FsLightbox from 'fslightbox-react';
+import { useState } from 'react';
+
+
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
 }
 
 const Category = ({category, slug}) => {
+
+  const images = category.map(({postImage}) => (
+    urlFor(postImage).url()
+   ))
+
+  const [lightboxController, setLightboxController] = useState({
+    toggler: false,
+    slide: 1
+    });
+    
+  function openLightboxOnSlide(number) {
+    setLightboxController({
+    toggler: !lightboxController.toggler,
+    slide: number
+    });
+  }
+
   return (
     <>
       <Head>
         <title>PR - {slug}</title>
       </Head>
-      <article>
-        <ul className='categ'>
+
+      <ul className='categ'>
           {category.map(({title, postImage}, index) => (
             <li className='categ-item'>
-              <a 
-                data-fancybox="gallery"
-                data-src={urlFor(postImage).url()} 
-                data-caption="A Toyota Previa covered in graffiti"
-                >
                 <img
                   key={index}
                   src={urlFor(postImage).url()}
                   alt={title}
-                  loading="lazy"
+                  onClick={() => openLightboxOnSlide(index+1)}
                 />
-              </a>
             </li>
+            
           ))}
           <li></li>
         </ul>
-      </article>
+
+      <FsLightbox
+        toggler={lightboxController.toggler}
+        sources={images}
+        slide={lightboxController.slide}
+      />
     </>
   )
 }

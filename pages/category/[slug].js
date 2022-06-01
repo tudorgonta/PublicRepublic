@@ -56,7 +56,7 @@ const Category = ({category, slug}) => {
         slide={lightboxController.slide}
         types={
           [
-            ...new Array(photos.length).fill('image')
+            ...new Array(images.length).fill('image')
           ]
         }
         key={lightboxController.key}

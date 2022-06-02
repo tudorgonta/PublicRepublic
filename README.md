@@ -5,11 +5,11 @@
   <li><strike>Add image loader</strike></li>
   <li>Import image prop from next with sanity to resolve image loading time + bandwitch</li>
   <li><strike>Edit hover category</strike></li>
-  <li>List Category images in mosaic or grid.</li>
+  <li><strike>List Category images in mosaic or grid.</strike></li>
   <li><strike>Add footer</strike></li>
-  <li>Banner edit (text container)</li>
+  <li><strike>Sub category display photos grid</strike></li>
+  <li>Editable navbar from admin</li>
+  <li>Banner+text container editable from admin</li>
   <li>Create contact us page</li>
-  <li>Nav bar gallery drop down with category list</li>
-  <li>Add another gallery (rename both for photos and creatives)</li>
   <li>Add favicon</li>
 </ol>

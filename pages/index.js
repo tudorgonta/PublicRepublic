@@ -20,7 +20,7 @@ const Index = ({category}) => {
 }
 
 export async function getServerSideProps() {
-  const category = await client.fetch(groq`*[_type == 'category']{
+  const category = await client.fetch(groq`*[_type == 'category' && !defined(parent)][0..5]{
       title,
       "catImage": mainImage
   }`)

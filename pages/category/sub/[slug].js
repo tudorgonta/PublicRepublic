@@ -1,7 +1,11 @@
 import groq from 'groq'
-import client from '../../client'
+import client from '../../../client'
 import Head from 'next/head'
 import imageUrlBuilder from '@sanity/image-url'
+
+import FsLightbox from 'fslightbox-react';
+import { useState } from 'react';
+
 
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
@@ -13,6 +17,18 @@ const Category = ({category, slug}) => {
     urlFor(postImage).url()
    ))
 
+  const [lightboxController, setLightboxController] = useState({
+    toggler: false,
+    slide: 1
+    });
+    
+  function openLightboxOnSlide(number) {
+    setLightboxController({
+    toggler: !lightboxController.toggler,
+    slide: number
+    });
+  }
+
   return (
     <>
       <Head>
@@ -22,24 +38,34 @@ const Category = ({category, slug}) => {
       <ul className='categ'>
           {category.map(({title, postImage}, index) => (
             <li className='categ-item'>
-              <a href={`sub/${encodeURIComponent(title)}`}>
                 <img
                   key={index}
                   src={urlFor(postImage).url()}
                   alt={title}
                   onClick={() => openLightboxOnSlide(index+1)}
                 />
-              </a>
             </li>
             
           ))}
           <li></li>
         </ul>
+
+      <FsLightbox
+        toggler={lightboxController.toggler}
+        sources={images}
+        slide={lightboxController.slide}
+        types={
+          [
+            ...new Array(images.length).fill('image')
+          ]
+        }
+        key={lightboxController.key}
+      />
     </>
   )
 }
 
-const query = groq`*[_type == "category" && parent->title == $slug]{
+const query = groq`*[_type == "post" && $slug == category->title || $slug == category->parent->title]{
   title,
   "postImage": mainImage
 }`

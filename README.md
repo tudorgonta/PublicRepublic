@@ -8,8 +8,11 @@
   <li><strike>List Category images in mosaic or grid.</strike></li>
   <li><strike>Add footer</strike></li>
   <li><strike>Sub category display photos grid</strike></li>
+  <li><strike>GROQ requests mastered</strike></li>
   <li>Editable navbar from admin</li>
   <li>Banner+text container editable from admin</li>
   <li>Create contact us page</li>
   <li>Add favicon</li>
+  <li>Add SEO optimization</li>
+  <li>Add Localisations optimization</li>
 </ol>

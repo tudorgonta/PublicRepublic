@@ -6,8 +6,10 @@ import Footer from '../components/Footer'
 import TextContainer from '../components/TextContainer'
 import { useEffect, useState } from "react";
 
+import groq from 'groq'
+import client from '../client'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps,nav }) {
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -30,7 +32,7 @@ function MyApp({ Component, pageProps }) {
     </Head> 
     <div className="max-w-screen-xl m-auto">
       <h1 className="text-6xl font-Monsieur text-center my-20">PublicRepublic</h1>
-      <Navbar />
+      <Navbar/>
       <Hr />
       <Component {...pageProps} />
       <Hr />

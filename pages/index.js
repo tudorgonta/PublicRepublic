@@ -34,23 +34,25 @@ const Index = ({category,nav}) => {
 
 export async function getServerSideProps() {
 
-  const category = await client.fetch(groq`*[_type == 'category' && !defined(parent)][0..5]{
+  const [nav, category] = await Promise.all([
+    client.fetch(groq`*[_type == 'navigation'][0]{
+      title,
+      sections[]{
+        "sectionTitle": title,
+        links[]{
+          "subSectionTitle": title
+        }
+      }
+    }`), 
+    client.fetch(groq`*[_type == 'category' && !defined(parent)][0..5]{
       title,
       "catImage": mainImage
-  }`)
-  const nav = await client.fetch(groq`*[_type == 'navigation'][0]{
-    title,
-    sections[]{
-      "sectionTitle": title,
-      links[]{
-        "subSectionTitle": title
-      }
-    }
-}`)
+    }`)
+  ]);
   return {
     props: {
-      category,
-      nav
+      nav,
+      category
     }
   }
 }

@@ -25,3 +25,18 @@
           <li></li>
         </ul>
       </article>
+
+
+
+{nav.sections.map(({sectionTitle, links}) => (
+  <>
+   <h2>-{sectionTitle}</h2>
+   {links != null &&
+    <div>
+    {links.map(({subSectionTitle}) => (
+    <h3>--{subSectionTitle}</h3>
+    ))}
+    </div>
+   }
+  </>
+))}

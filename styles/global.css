@@ -185,4 +185,18 @@
         min-width: 0;
       }
     }
+
+    .navigat nav {
+      width: 50%;
+      margin: 0 auto;
+      text-transform: uppercase;
+    }
+    .navigat button {
+      text-transform: uppercase;
+    }
+    .navigat li {
+      list-style: none;
+    }
+    .navigat nav div div ul{
+    }
   }

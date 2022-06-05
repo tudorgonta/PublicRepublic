@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import '../styles/global.css'
-import Navbar from '../components/Navbar'
 import Hr from '../components/Hr'
 import Footer from '../components/Footer'
 import TextContainer from '../components/TextContainer'

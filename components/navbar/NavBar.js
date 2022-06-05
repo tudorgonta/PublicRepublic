@@ -1,6 +1,8 @@
 import MenuItems from './MenuItems'
+import Hr from '../Hr';
 const NavBar = ({nav}) => {
   return (
+    <>
     <nav className='nav-area'>
         <ul className="menus">
             {nav.sections.map(({sectionTitle, target, links}, index) => {
@@ -8,6 +10,8 @@ const NavBar = ({nav}) => {
             })}
         </ul>
     </nav>
+    <Hr />
+    </>
   )
 }
 

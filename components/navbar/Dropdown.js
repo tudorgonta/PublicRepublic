@@ -1,9 +1,9 @@
-const Dropdown = ({ submenus, dropdown }) => {
+const Dropdown = ({ links, dropdown }) => {
     return (
      <ul className={`dropdown ${dropdown ? "show" : ""} `}>
-      {submenus.map(({subSectionTitle}, index) => (
+      {links.map(({subSectionTitle, subtarget}, index) => (
        <li key={index} className="sub-menu-items">
-        <a href="/#">{subSectionTitle}</a>
+        <a href={subtarget}>{subSectionTitle}</a>
        </li>
       ))}
      </ul>

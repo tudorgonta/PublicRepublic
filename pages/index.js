@@ -4,13 +4,12 @@ import EmblaCarousel from '../components/Carousel/EmblaCarousel';
 import Hr from '../components/Hr';
 import ImageBanner from '../components/ImageBanner';
 import TextContainer from '../components/TextContainer';
-import Navbar from '../components/navbar/NavBar';
+import NavBar from '../components/navbar/NavBar';
 
 const Index = ({category,nav}) => {
     return (
       <div>
-        <Navbar nav={nav}/>
-        <Hr />
+        <NavBar nav={nav}/>
         {/*<Carousel category={category}/>*/}
         <EmblaCarousel category={category}/>
         <TextContainer />
@@ -29,7 +28,8 @@ export async function getServerSideProps() {
         "sectionTitle": title,
         target,
         links[]{
-          "subSectionTitle": title
+          "subSectionTitle": title,
+          "subtarget": subtarget
         }
       }
     }`), 

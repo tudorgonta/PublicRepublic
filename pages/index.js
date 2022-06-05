@@ -6,22 +6,22 @@ import ImageBanner from '../components/ImageBanner';
 import TextContainer from '../components/TextContainer';
 import NavBar from '../components/navbar/NavBar';
 
-const Index = ({category,nav}) => {
+const Index = ({category,nav,banner}) => {
     return (
       <div>
         <NavBar nav={nav}/>
         {/*<Carousel category={category}/>*/}
         <EmblaCarousel category={category}/>
-        <TextContainer />
+        <TextContainer/>
         <Hr/>
-        <ImageBanner />
+        <ImageBanner banner={banner}/>
       </div>
     )
 }
 
 export async function getServerSideProps() {
 
-  const [nav, category] = await Promise.all([
+  const [nav, category, banner] = await Promise.all([
     client.fetch(groq`*[_type == 'navigation'][0]{
       title,
       sections[]{
@@ -36,12 +36,17 @@ export async function getServerSideProps() {
     client.fetch(groq`*[_type == 'category' && !defined(parent)][0..5]{
       title,
       "catImage": mainImage
+    }`),
+    client.fetch(groq`*[_type == 'banner'][0]{
+      desc,
+      mainImage
     }`)
   ]);
   return {
     props: {
       nav,
-      category
+      category,
+      banner
     }
   }
 }

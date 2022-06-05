@@ -9,9 +9,9 @@
   <li><strike>Sub category display photos grid</strike></li>
   <li><strike>GROQ requests mastered</strike></li>
   <li><strike>GEditable navbar from admin</strike></li>
-  <li><strike>Add Category image array + retrieve front end (removing posts)<strike></li>
-  <li><strike>Add desc on admin panel: navigation link usage + category usage<strike></li>
-  <li>Banner+text container editable from admin</li>
+  <li><strike>Add Category image array + retrieve front end (removing posts)</strike></li>
+  <li><strike>Add desc on admin panel: navigation link usage + category usage</strike></li>
+  <li><strike>Banner+text container editable from admin</strike></li>
   <li>Create contact us page</li>
   <li>Add favicon</li>
   <li>Import image prop from next with sanity to resolve image loading time + bandwitch</li>

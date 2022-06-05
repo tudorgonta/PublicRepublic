@@ -13,12 +13,11 @@ function urlFor (source) {
   return imageUrlBuilder(client).image(source)
 }
 
-const Category = ({category, slug, nav}) => {
+const Category = ({slug, nav, categ}) => {
 
-  const images = category.map(({postImage}) => (
-    urlFor(postImage).url()
-   ))
-
+  const categimg = categ.imagesGallery.map((index)=> (
+    urlFor(index).url()
+  ))
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
     slide: 1
@@ -38,12 +37,11 @@ const Category = ({category, slug, nav}) => {
       </Head>
       <NavBar nav={nav} />
       <ul className='categ'>
-          {category.map(({title, postImage}, index) => (
+          {categ.imagesGallery.map((image, index) => (
             <li className='categ-item'>
                 <img
                   key={index}
-                  src={urlFor(postImage).url()}
-                  alt={title}
+                  src={urlFor(image).url()}
                   onClick={() => openLightboxOnSlide(index+1)}
                 />
             </li>
@@ -54,11 +52,11 @@ const Category = ({category, slug, nav}) => {
 
       <FsLightbox
         toggler={lightboxController.toggler}
-        sources={images}
+        sources={categimg}
         slide={lightboxController.slide}
         types={
           [
-            ...new Array(images.length).fill('image')
+            ...new Array(categimg.length).fill('image')
           ]
         }
         key={lightboxController.key}
@@ -67,10 +65,6 @@ const Category = ({category, slug, nav}) => {
   )
 }
 
-const query = groq`*[_type == "post" && $slug == category->title || $slug == category->parent->title]{
-  title,
-  "postImage": mainImage
-}`
 export async function getServerSideProps(context) {
   const nav = await client.fetch(groq`*[_type == 'navigation'][0]{
     title,
@@ -84,12 +78,17 @@ export async function getServerSideProps(context) {
     }
   }`);
   const { slug = "" } = context.params
-  const category = await client.fetch(query, { slug })
+  const categ = await client.fetch(groq`*[_type == "category" && $slug == title][0]{
+    title,
+    imagesGallery[]{
+      ...,
+    },
+  }`, {slug})
   return {
     props: {
-        category,
         slug,
-        nav
+        nav,
+        categ
     }
   }
 }

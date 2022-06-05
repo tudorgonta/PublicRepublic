@@ -15,7 +15,7 @@ function urlFor (source) {
 
 const Category = ({slug, nav, categ}) => {
 
-  const categimg = categ.imagesGallery.map((index)=> (
+  const categimg = categ.imagesGallery != null && categ.imagesGallery.map((index)=> (
     urlFor(index).url()
   ))
   const [lightboxController, setLightboxController] = useState({
@@ -29,7 +29,7 @@ const Category = ({slug, nav, categ}) => {
     slide: number
     });
   }
-
+  console.log(categ.imagesGallery)
   return (
     <>
       <Head>
@@ -37,6 +37,8 @@ const Category = ({slug, nav, categ}) => {
       </Head>
       <NavBar nav={nav} />
       <ul className='categ'>
+        {categ.imagesGallery != null ? (
+          <>
           {categ.imagesGallery.map((image, index) => (
             <li className='categ-item'>
                 <img
@@ -45,8 +47,11 @@ const Category = ({slug, nav, categ}) => {
                   onClick={() => openLightboxOnSlide(index+1)}
                 />
             </li>
-            
           ))}
+          </>
+        )
+          : (<></>)
+        }
           <li></li>
         </ul>
 

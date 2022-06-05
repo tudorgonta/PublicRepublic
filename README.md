@@ -13,8 +13,13 @@
   <li><strike>Add desc on admin panel: navigation link usage + category usage</strike></li>
   <li><strike>Banner+text container editable from admin</strike></li>
   <li>Create contact us page</li>
+  <li>NavBar edit divider and hover + responsive</li>
+  <li>Decide mobile carousel</li>
+  <li>Change logo + navbar font</li>
+  <li>Make text container editable</li>
   <li>Add favicon</li>
   <li><strike>Import image prop from next with sanity to resolve image loading time + bandwitch</strike></li>
+  <li><h3>Update 2.0</h3></li>
   <li>Add SEO optimization</li>
   <li>Add Localisations optimization</li>
 </ol>

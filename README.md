@@ -19,7 +19,7 @@
   <li>Make text container editable</li>
   <li>Add favicon</li>
   <li><strike>Import image prop from next with sanity to resolve image loading time + bandwitch</strike></li>
-  <li><h3>Update 2.0</h3></li>
+  <h3>Update 2.0</h3>
   <li>Add SEO optimization</li>
   <li>Add Localisations optimization</li>
 </ol>

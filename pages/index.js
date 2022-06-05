@@ -12,6 +12,7 @@ const Index = ({category,nav,banner}) => {
         <NavBar nav={nav}/>
         {/*<Carousel category={category}/>*/}
         <EmblaCarousel category={category}/>
+        <Hr/>
         <TextContainer/>
         <Hr/>
         <ImageBanner banner={banner}/>

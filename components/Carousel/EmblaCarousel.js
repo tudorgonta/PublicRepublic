@@ -39,7 +39,7 @@ const EmblaCarousel = ({ category }) => {
               <div className="embla__slide__inner">
                 <img
                   className="embla__slide__img"
-                  src={urlFor(catImage).url()}
+                  src={urlFor(catImage).quality(40).url()}
                   alt={title}
                 />
                 <a

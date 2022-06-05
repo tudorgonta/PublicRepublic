@@ -41,7 +41,7 @@ const Category = ({slug, nav, categ}) => {
             <li className='categ-item'>
                 <img
                   key={index}
-                  src={urlFor(image).url()}
+                  src={urlFor(image).quality(40).url()}
                   onClick={() => openLightboxOnSlide(index+1)}
                 />
             </li>

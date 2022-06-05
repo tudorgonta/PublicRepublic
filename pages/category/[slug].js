@@ -27,7 +27,7 @@ const Category = ({category, slug, nav}) => {
               <a href={`sub/${encodeURIComponent(title)}`}>
                 <img
                   key={index}
-                  src={urlFor(postImage).url()}
+                  src={urlFor(postImage).quality(40).url()}
                   alt={title}
                   onClick={() => openLightboxOnSlide(index+1)}
                 />

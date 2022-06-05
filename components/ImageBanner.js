@@ -6,7 +6,7 @@ function urlFor (source) {
   }
 
 const ImageBanner = ({banner}) => {
-  const path = urlFor(banner.mainImage).url()
+  const path = urlFor(banner.mainImage).quality(70).url()
   console.log(path)
   return (
     <div className='pt-12 pb-8'>

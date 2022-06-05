@@ -14,7 +14,7 @@
   <li><strike>Banner+text container editable from admin</strike></li>
   <li>Create contact us page</li>
   <li>Add favicon</li>
-  <li>Import image prop from next with sanity to resolve image loading time + bandwitch</li>
+  <li><strike>Import image prop from next with sanity to resolve image loading time + bandwitch</strike></li>
   <li>Add SEO optimization</li>
   <li>Add Localisations optimization</li>
 </ol>

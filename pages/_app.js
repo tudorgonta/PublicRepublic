@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
+    }, 1500);
   }, []);
 
   return <>{isLoading ? 
@@ -25,6 +25,7 @@ function MyApp({ Component, pageProps }) {
   <>
     <Head>
       <title>PublicRepublic</title>
+      <link rel="shortcut icon" href="/static/pr.png" />
     </Head> 
       <div className="max-w-screen-xl m-auto">
       <h1 className="text-6xl font-Monsieur text-center my-20">PublicRepublic</h1>

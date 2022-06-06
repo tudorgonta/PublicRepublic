@@ -6,10 +6,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 @font-face {
-  font-family: 'The-Romantica';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''), url('../static/fonts/Romantica.otf') format('otf');
+  font-family: 'Romantica';
+  src: url('/fonts/Romantica.otf');
+}
+
+@font-face {
+  font-family: 'Bulkey';
+  src: url('/fonts/bulkey.ttf');
 }
 
 
@@ -218,8 +221,9 @@
     }
     
     .menu-items {
+      color: rgb(46, 46, 46);
       position: relative;
-      font-size: 16px;
+      font-size: 14px;
       align-items: center;
     }
 
@@ -227,20 +231,20 @@
       content: '';
       position: absolute;
       right: -2px;
-      top: 25%;
+      top: 15%;
       width: 1.5px;
-      height: 50%;
-      background-color: rgb(229 231 235);
+      height: 60%;
+      background-color: rgb(186, 187, 191);
     }
 
     .menu-items:first-child::before {
       content: '';
       position: absolute;
       left: -2px;
-      top: 25%;
+      top: 15%;
       width: 1.5px;
-      height: 50%;
-      background-color: rgb(229 231 235);
+      height: 60%;
+      background-color: rgb(186, 187, 191);
     }
     
     .menu-items a {
@@ -261,15 +265,15 @@
       width: 100%;
     }
     .menu-items button svg {
-      opacity: 50%;
-      margin-top: 0.1rem;
+      opacity: 100%;
+      margin-top: -0.1rem;
     }
     
     .menu-items a,
     .menu-items button {
       text-transform: uppercase;
       text-align: left;
-      padding: 0.2rem 1rem;
+      padding: 0.2rem 2rem;
     }
     
     .menu-items a:hover,
@@ -287,6 +291,7 @@
       font-size: 0.875rem;
       z-index: 9999;
       min-width: 10rem;
+      margin-right: 1rem;
       padding: 0.5rem 0;
       list-style: none;
       background-color: #fff;

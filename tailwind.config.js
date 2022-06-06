@@ -13,13 +13,11 @@ module.exports = {
         Roboto: ['Roboto', 'sans-serif'],
         Tangerine: ['Tangerine', 'cursive'],
         Dancing: ['Dancing Script', 'cursive'],
-        Romantica: ['The-Romantica'],
+        Romantica: ['Romantica'],
+        Bulkey: ['Bulkey'],
        },
     },
   },
   plugins: [
   ],
-  corePlugins: {
-    fontFamily: true,
-  },
 }

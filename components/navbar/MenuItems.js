@@ -19,7 +19,7 @@ const MenuItems = ({ sectionTitle, target, links }) => {
     };
    }, [dropdown]);
  return (
-  <li className="menu-items" ref={ref}>
+  <li className="menu-items font-Bulkey tracking-[0.1em]" ref={ref}>
    {links != null ? (
     <>
      <button 

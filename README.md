@@ -12,14 +12,14 @@
   <li><strike>Add Category image array + retrieve front end (removing posts)</strike></li>
   <li><strike>Add desc on admin panel: navigation link usage + category usage</strike></li>
   <li><strike>Banner+text container editable from admin</strike></li>
-  <li>Create contact us page</li>
-  <li><strike>NavBar edit divider and hover</strike> + responsive</li>
-  <li><strike>Category link hover with text</strike></li>
-  <li>Decide mobile carousel</li>
-  <li>Change logo + navbar font</li>
-  <li>Make text container editable</li>
   <li><strike>Add favicon</strike></li>
   <li><strike>Import image prop from next with sanity to resolve image loading time + bandwitch</strike></li>
+  <li><strike>NavBar edit divider and hover</strike> + responsive</li>
+  <li><strike>Category link hover with text</strike></li>
+  <li><strike>Change logo + navbar font</strike></li>
+  <li>Create contact us page</li>
+  <li>Decide mobile carousel</li>
+  <li>Make text container editable</li>
   <h3>Update 2.0</h3>
   <li>Add SEO optimization</li>
   <li>Add Google Analitycs</li>

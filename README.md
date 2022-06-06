@@ -14,12 +14,13 @@
   <li><strike>Banner+text container editable from admin</strike></li>
   <li><strike>Add favicon</strike></li>
   <li><strike>Import image prop from next with sanity to resolve image loading time + bandwitch</strike></li>
-  <li><strike>NavBar edit divider and hover</strike> + responsive</li>
+  <li><strike>NavBar edit divider and hover</strike></li>
   <li><strike>Category link hover with text</strike></li>
   <li><strike>Change logo + navbar font</strike></li>
   <li>Create contact us page</li>
   <li>Decide mobile carousel</li>
   <li>Make text container editable</li>
+  <li>Reponsive update</li>
   <h3>Update 2.0</h3>
   <li>Add SEO optimization</li>
   <li>Add Google Analitycs</li>

@@ -18,6 +18,7 @@
   <li><strike>Category link hover with text</strike></li>
   <li><strike>Change logo + navbar font</strike></li>
   <li>Create contact us page</li>
+  <li>Sub Categ Video add</li>
   <li>Decide mobile carousel</li>
   <li>Make text container editable</li>
   <li>Reponsive update</li>

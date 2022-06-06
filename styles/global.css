@@ -9,7 +9,7 @@
   font-family: 'The-Romantica';
   font-style: normal;
   font-weight: 400;
-  src: local(''), url('/fonts/Romantica.otf') format('otf');
+  src: local(''), url('../static/fonts/Romantica.otf') format('otf');
 }
 
 

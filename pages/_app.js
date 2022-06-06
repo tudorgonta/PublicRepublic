@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
 
   return <>{isLoading ? 
   <div className="flex h-screen">
-    <div className="animate-flicker font-Monsieur m-auto text-6xl">
+    <div className="animate-flicker font-Romantica m-auto text-6xl">
       PublicRepublic
   </div> 
   </div>
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
       <link rel="shortcut icon" href="/static/pr.png" />
     </Head> 
       <div className="max-w-screen-xl m-auto">
-      <h1 className="text-6xl font-Monsieur text-center my-20">PublicRepublic</h1>
+      <h1 className="text-6xl font-Romantica text-center my-20">PublicRepublic</h1>
       <Component {...pageProps} />
       <Hr />
       <TextContainer />

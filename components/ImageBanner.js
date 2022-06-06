@@ -12,8 +12,8 @@ const ImageBanner = ({banner}) => {
     <div className='pt-12 pb-8'>
         <div className="bg-center bg-no-repeat bg-cover h-[80vh]" style={{backgroundImage: `url(${path})`}}>
             <main className="w-full flex flex-col h-[80vh] content-center justify-center" >
-                <div className="w-full sm:w-1/2 lg:w-1/3  rounded-xl m-auto">
-                    <div className="text-white text-center">
+                <div className="w-full sm:w-1/2 lg:w-1/5 m-auto">
+                    <div className="text-black text-center bg-white/90 p-4 rounded">
                         {banner.desc}
                     </div>
                 </div>

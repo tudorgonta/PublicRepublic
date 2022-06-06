@@ -12,9 +12,14 @@ module.exports = {
         Monsieur: ['Monsieur La Doulaise', 'cursive'],
         Roboto: ['Roboto', 'sans-serif'],
         Tangerine: ['Tangerine', 'cursive'],
+        Dancing: ['Dancing Script', 'cursive'],
+        Romantica: ['The-Romantica'],
        },
     },
   },
   plugins: [
-  ], 
+  ],
+  corePlugins: {
+    fontFamily: true,
+  },
 }

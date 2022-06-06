@@ -44,9 +44,9 @@ const EmblaCarousel = ({ category }) => {
                 />
                 <a
                   href={`/category/${encodeURIComponent(title)}`}
-                  className="flex h-full w-full align-middle aspect-square absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-slate-600/75 z-10"
+                  className="flex h-full w-full align-middle aspect-square absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-zinc-500/[0.4] z-10"
                 >
-                  <h3 className="text-white text-xl m-auto uppercase font-Roboto">
+                  <h3 className="text-white text-xl m-auto uppercase font-Roboto opacity-100">
                     {title}
                   </h3>
                 </a>

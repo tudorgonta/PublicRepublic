@@ -18,7 +18,7 @@
   <li>Decide mobile carousel</li>
   <li>Change logo + navbar font</li>
   <li>Make text container editable</li>
-  <li>Add favicon</li>
+  <li><strike>Add favicon</strike></li>
   <li><strike>Import image prop from next with sanity to resolve image loading time + bandwitch</strike></li>
   <h3>Update 2.0</h3>
   <li>Add SEO optimization</li>

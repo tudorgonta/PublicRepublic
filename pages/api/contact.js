@@ -1,7 +1,6 @@
 require('dotenv').config()
 
 export default async function (req,res) {
-    const { name, email, message} = JSON.parse(req.body);
     
             let nodemailer = require('nodemailer')
             const transporter = nodemailer.createTransport({
@@ -30,9 +29,9 @@ export default async function (req,res) {
             const mailData = {
                 from: process.env.login,
                 to: process.env.emailto,
-                subject: `Message From ${name}`,
-                text: message + " | Sent from: " + email,
-                html: `<div>${message}</div><p>Sent from: ${email}</p>`
+                subject: `Message From ${req.body.name}`,
+                text: req.body.message + " | Sent from: " + req.body.email,
+                html: `<div>${req.body.message}</div><p>Sent from: ${req.body.email}</p>`
             }
 
             await new Promise((resolve, reject) => {

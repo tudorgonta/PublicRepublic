@@ -12,6 +12,7 @@ module.exports = {
         Monsieur: ['Monsieur La Doulaise', 'cursive'],
         Roboto: ['Roboto', 'sans-serif'],
         Tangerine: ['Tangerine', 'cursive'],
+        Rubik: ['Rubik', 'open-sans'],
         Dancing: ['Dancing Script', 'cursive'],
         Romantica: ['Romantica'],
         Bulkey: ['Bulkey'],

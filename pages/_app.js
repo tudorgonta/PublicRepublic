@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1);
   }, []);
 
   return <>{isLoading ? 
@@ -35,7 +35,6 @@ function MyApp({ Component, pageProps }) {
       <h2 className='text-1xl text-center uppercase -mt-14 mb-10 font-Bulkey tracking-[0.5em]'>Video &amp; Photograpghy</h2>
       <Component {...pageProps} />
       <Hr />
-      <TextContainer />
     </div>
     <Footer />
   </>

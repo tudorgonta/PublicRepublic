@@ -17,11 +17,10 @@
   <li><strike>NavBar edit divider and hover</strike></li>
   <li><strike>Category link hover with text</strike></li>
   <li><strike>Change logo + navbar font</strike></li>
-  <li>Create contact us page</li>
+  <li><strike>Create contact us page</strike></li>
+  <li>Add dontenv to contact + security true + vercel sett env variables</li>
   <li>Sub Categ Video add</li>
-  <li>Decide mobile carousel</li>
-  <li>Make text container editable</li>
-  <li>Reponsive update</li>
+  <li>Reponsive update(no carousel, list images with title in flex + navbar hamburger)</li>
   <h3>Update 2.0</h3>
   <li>Add SEO optimization</li>
   <li>Add Google Analitycs</li>

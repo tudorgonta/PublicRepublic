@@ -21,7 +21,7 @@ const contact = ({nav}) => {
       message
     }
 
-    fetch(`https://publicrepublic.art/api/contact`, {
+    fetch(`https://${process.env.VERCEL_URL}/api/contact/`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain, */*',

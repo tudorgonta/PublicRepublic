@@ -21,7 +21,7 @@ const MenuItems = ({ sectionTitle, target, links }) => {
    }, [dropdown]);
 
  return (
-  <li className="uppercase text-left text-gray-900 relative text-sm items-center font-Bulkey tracking-[0.1em] first:before:content-[''] first:before:absolute first:before:-left-0.5 first:before:top-[15%] first:before:w-[1.5px] first:before:h-3/5 first:before:bg-gray-400 after:content-[''] after:absolute after:-right-0.5 after:top-[15%] after:w-[1.5px] after:h-3/5 after:bg-gray-400" ref={ref}>
+  <li className="uppercase text-left text-gray-900 relative text-sm items-center font-Bulkey tracking-[0.1em] first:before:content-[''] first:before:absolute first:before:-left-0.5 first:before:top-[15%] first:before:w-[1.5px] first:before:h-3/5 first:before:bg-gray-200 after:content-[''] after:absolute after:-right-0.5 after:top-[15%] after:w-[1.5px] after:h-3/5 after:bg-gray-200" ref={ref}>
    {links != null ? (
     <>
      <button 

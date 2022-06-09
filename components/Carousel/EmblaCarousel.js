@@ -78,7 +78,7 @@ const EmblaCarousel = ({ category, options = { loop: true } }) => {
                   alt={title}
                 />
                 <div className="flex h-full w-full align-middle aspect-square absolute top-0 left-0 fade-in-text">
-                  <h3 className="text-white text-3xl m-auto uppercase font-Dancing">
+                  <h3 className="text-white text-6xl m-auto capitalize font-Dancing">
                     {title}
                   </h3>
                 </div>

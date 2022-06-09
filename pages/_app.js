@@ -2,6 +2,7 @@ import Head from 'next/head'
 import '../styles/global.css'
 import Footer from '../components/Footer'
 import { useEffect, useState } from "react";
+import SvgComponent from '../components/svg';
 
 function MyApp({ Component, pageProps }) {
 
@@ -28,9 +29,10 @@ function MyApp({ Component, pageProps }) {
       <title>PublicRepublic</title>
       <link rel="shortcut icon" href="/static/pr.png" />
     </Head> 
-      <div className="max-w-screen-xl m-auto">
-      <a href="/"><h1 className="text-8xl md:text-9xl font-Romantica text-center my-1 opacity-40">PublicRepublic</h1></a>
-      <h2 className='text-sm md:text-1xl text-center uppercase -mt-5 mb-5 font-Bulkey tracking-[0.5em]'>Video &amp; Photograpghy</h2>
+    <div className="w-screen m-auto">
+      <div className='flex justify-center mb-[-3.5rem] -my-10'>
+        <a href="/"><SvgComponent width={470.250} height={250.259}/></a>
+      </div>
       <Component {...pageProps} />
     </div>
     <Footer />

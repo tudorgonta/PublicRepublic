@@ -24,6 +24,11 @@
 /* Carousel styles */
 @layer utilities {
 
+  .active{
+    color: #82001e;
+    text-transform: underline;
+  }
+
   .fil0 {fill:#BCBDBD;fill-rule:nonzero}
   .fil1 {fill:#2B2A29;fill-rule:nonzero}
 

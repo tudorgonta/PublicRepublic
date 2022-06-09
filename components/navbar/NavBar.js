@@ -2,8 +2,10 @@ import MenuItems from './MenuItems'
 import Hr from '../Hr';
 import {useState} from 'react'
 import MobMenu from './MobMenu'
+import { useRouter } from "next/router";
 
 const NavBar = ({nav}) => {
+  const router = useRouter();
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <>
@@ -42,6 +44,9 @@ const NavBar = ({nav}) => {
         })}
       </ul>
     </nav>
+    {router.pathname != "/" &&
+      <Hr />
+    }
     </>
   )
 }

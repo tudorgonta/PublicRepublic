@@ -1,8 +1,9 @@
 import Dropdown from "./Dropdown";
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 
 const MenuItems = ({ sectionTitle, target, links }) => {
-
+ const router = useRouter();
  const [dropdown, setDropdown] = useState(false);
  let ref = useRef();
  useEffect(() => {
@@ -39,7 +40,7 @@ const MenuItems = ({ sectionTitle, target, links }) => {
      />
     </>
    ) : (
-    <a href={target} className="py-[0.2rem] px-[2rem] block no-underline hover:underline">{sectionTitle}</a>
+    <a href={target} className={`py-[0.2rem] px-[2rem] block no-underline hover:underline ${router.pathname == target ? "active" : ""}`}>{sectionTitle} </a>
    )}
   </li>
  );

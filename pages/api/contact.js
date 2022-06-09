@@ -13,9 +13,9 @@ export default async function (req,res) {
     `;
     
     mail.send({
-        to: 'fedearasina@gmail.com',
+        to: 'nelu80@gmail.com',
         from: 'contact.do.not.reply@publicrepublic.art',
-        subject: 'New Message!'+body.name,
+        subject: '[PublicRepublic] New Message! From: '+body.name,
         text: message,
         html: message.replace(/\r\n/g, '<br>'),
       }).then(() => {

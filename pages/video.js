@@ -4,7 +4,6 @@ import Head from "next/head"
 import NavBar from "../components/navbar/NavBar"
 import SanityMuxPlayer from "sanity-mux-player"
 
-
 const contact = ({nav, video}) => {
   return (
     <>
@@ -12,14 +11,21 @@ const contact = ({nav, video}) => {
         <title>PR - Contact Us</title>
       </Head>
       <NavBar nav={nav} />
-        <SanityMuxPlayer 
-            assetDocument={video}
-            autoload={false}
-            autoplay={false}
-            showControls={true}
-            muted={false}
-            loop={false}
-        />
+      <div className='w-5/6 flex flex-col items-center flex-wrap md:flex-row m-auto justify-evenly mt-10 mb-5'>
+        {video.map(({title, catVideos}, index) => (
+          <div className='w-full md:w-1/3 p-4 text-center uppercase font-Roboto' key={index}>
+            <h3 className='p-4 text-lg'>{title}</h3>
+            <SanityMuxPlayer 
+              assetDocument={catVideos.asset}
+              autoload={true}
+              autoplay={false}
+              showControls={true}
+              muted={false}
+              loop={false}
+           />
+          </div>
+        ))}
+      </div>
     </>
   )
 }
@@ -36,7 +42,14 @@ export async function getServerSideProps() {
         }
       }
     }`);
-    const video = await client.fetch(groq`*[_type == "mux.videoAsset"][0]`)
+    const video = await client.fetch(groq`*[_type == "videogal"]{
+      title,
+      catVideos{
+        asset->{
+          ...
+        }
+      }
+    }`)
   return {
     props: {
         nav,

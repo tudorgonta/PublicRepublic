@@ -57,7 +57,7 @@ const contact = ({nav}) => {
             </div>
           </div>
 
-          <div className='w-full pt-5 lg:pt-0 md:pt-0 md:w-1/3 lg:w-1/3 ml-10 text-left'>
+          <div className='w-full pt-10 md:pt-5 lg:pt-0 md:pt-0 md:w-1/3 lg:w-1/3 md:ml-10 text-left'>
             <form className='flex flex-col' onSubmit={handleOnSubmit} method="post">
               <div className='mb-4 flex flex-col'>
                 <label htmlFor="name" className='mb-2'>Your name: </label>

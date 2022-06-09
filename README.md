@@ -19,8 +19,8 @@
   <li><strike>Change logo + navbar font</strike></li>
   <li><strike>Create contact us page</strike></li>
   <li><strike>Add dontenv to contact + security true + vercel sett env variables</strike></li>
-  <li>Sub Categ Video add</li>
-  <li>Reponsive update(no carousel, list images with title in flex + navbar hamburger)</li>
+  <li><strike>Sub Categ Video add</strike></li>
+  <li><strike>Reponsive update(no carousel, list images with title in flex + navbar hamburger)</strike></li>
   <h3>Update 2.0</h3>
   <li>Add SEO optimization</li>
   <li>Add Google Analitycs</li>

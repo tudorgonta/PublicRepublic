@@ -30,8 +30,11 @@ function MyApp({ Component, pageProps }) {
       <link rel="shortcut icon" href="/static/pr.png" />
     </Head> 
     <div className="w-screen m-auto">
-      <div className='flex justify-center mb-[-3.5rem] -my-10'>
+      <div className='hidden md:flex justify-center mb-[-3.5rem] -my-10'>
         <a href="/"><SvgComponent width={470.250} height={250.259}/></a>
+      </div>
+      <div className='flex md:hidden justify-center mb-[-3.5rem] -my-10'>
+        <a href="/"><SvgComponent width={300.250} height={250.259}/></a>
       </div>
       <Component {...pageProps} />
     </div>

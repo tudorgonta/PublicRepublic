@@ -14,7 +14,7 @@ const contact = ({nav, video}) => {
       <NavBar nav={nav} />
         <SanityMuxPlayer 
             assetDocument={video}
-            autoload={true}
+            autoload={false}
             autoplay={false}
             showControls={true}
             muted={false}

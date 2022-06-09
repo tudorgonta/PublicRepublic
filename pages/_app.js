@@ -31,8 +31,8 @@ function MyApp({ Component, pageProps }) {
       <link rel="shortcut icon" href="/static/pr.png" />
     </Head> 
       <div className="max-w-screen-xl m-auto">
-      <h1 className="text-9xl font-Romantica text-center my-10 opacity-40">PublicRepublic</h1>
-      <h2 className='text-1xl text-center uppercase -mt-14 mb-10 font-Bulkey tracking-[0.5em]'>Video &amp; Photograpghy</h2>
+      <h1 className="text-6xl md:text-9xl font-Romantica text-center my-10 opacity-40">PublicRepublic</h1>
+      <h2 className='text-xl md:text-1xl text-center uppercase -mt-14 mb-10 font-Bulkey tracking-[0.5em]'>Video &amp; Photograpghy</h2>
       <Component {...pageProps} />
       <Hr />
     </div>

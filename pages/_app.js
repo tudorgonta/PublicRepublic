@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import '../styles/global.css'
-import Hr from '../components/Hr'
 import Footer from '../components/Footer'
-import TextContainer from '../components/TextContainer'
 import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }) {

@@ -17,6 +17,7 @@
     "@sanity/image-url": "^1.0.1",
     "@sendgrid/mail": "^7.7.0",
     "dotenv": "^16.0.1",
+    "embla-carousel-autoplay": "^6.2.0",
     "embla-carousel-react": "^6.2.0",
     "fslightbox-react": "^1.6.2-2",
     "groq": "^2.29.3",

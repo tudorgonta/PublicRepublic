@@ -9,9 +9,11 @@ import NavBar from '../components/navbar/NavBar';
 const Index = ({category,nav,banner}) => {
     return (
       <div>
-        <NavBar nav={nav}/>
-        {/*<Carousel category={category}/>*/}
-        <EmblaCarousel category={category}/>
+        <div className="max-w-screen-xl m-auto">
+          <NavBar nav={nav}/>
+          {/*<Carousel category={category}/>*/}
+          <EmblaCarousel category={category}/>
+        </div>
         <Hr/>
         <TextContainer/>
         <Hr/>

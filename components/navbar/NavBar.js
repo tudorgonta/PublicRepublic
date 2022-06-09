@@ -7,7 +7,7 @@ const NavBar = ({nav}) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <>
-    <nav className='flex justify-center items-center max-w-full my-0 mx-auto h-15 py-0 px-5'>
+    <nav className='flex justify-center items-center max-w-full my-0 mx-auto h-15 py-0 px-5 mb-2'>
 
     <section className="MOBILE-MENU flex lg:hidden">
 
@@ -42,7 +42,6 @@ const NavBar = ({nav}) => {
         })}
       </ul>
     </nav>
-    <Hr />
     </>
   )
 }

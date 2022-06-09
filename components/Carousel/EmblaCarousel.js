@@ -52,7 +52,7 @@ const EmblaCarousel = ({ category }) => {
       ))}
     </div>
 
-    <div className="DESKTOP embla hidden md:block">
+    <div className="DESKTOP embla hidden md:block border-[3px] border-solid border-gray-200">
       <div className="embla__viewport" ref={viewportRef}>
         <div className="embla__container">
           {category.map(({title, catImage}, index) => (

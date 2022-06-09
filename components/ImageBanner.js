@@ -9,7 +9,7 @@ const ImageBanner = ({banner}) => {
   const path = urlFor(banner.mainImage).quality(70).url()
   console.log(path)
   return (
-    <div className='pt-12 pb-8'>
+    <div className='w-full pt-12 pb-8'>
         <div className="bg-center bg-no-repeat bg-cover h-[80vh]" style={{backgroundImage: `url(${path})`}}>
             <main className="w-full flex flex-col h-[80vh] content-center justify-center" >
                 <div className="w-full sm:w-1/2 lg:w-1/3 m-auto">

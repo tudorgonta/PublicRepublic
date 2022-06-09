@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-white lg shadow md:px-6 md:py-8 dark:bg-neutral-800">
+    <footer className="w-full p-4 bg-white lg shadow md:px-6 md:py-8 dark:bg-neutral-800">
         <div className="sm:flex sm:items-center sm:justify-between">
             <a href="/" className="flex items-center mb-4 sm:mb-0">
                 <span className="self-center text-5xl font-Romantica whitespace-nowrap dark:text-white">PublicRepublic</span>

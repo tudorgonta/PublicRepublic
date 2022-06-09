@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import groq from 'groq'
 import client from '../client'
 import Head from "next/head"

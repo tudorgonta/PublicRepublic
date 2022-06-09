@@ -1,51 +1,24 @@
 require('dotenv').config()
-
+const mail = require('@sendgrid/mail');
+mail.setApiKey(process.env.API_KEY);
 export default async function (req,res) {
+
+    const body = JSON.parse(req.body);
+    console.log('body', body);
+
+    const message = `
+        Name: ${body.name}\r\n
+        Email: ${body.email}\r\n
+        Message: ${body.message}
+    `;
     
-            let nodemailer = require('nodemailer')
-            const transporter = nodemailer.createTransport({
-                port: 587,
-                host: 'smtp.office365.com',
-                auth: {
-                    user: process.env.login,
-                    pass: process.env.password,
-                },
-                secure: true
-            })
-
-            await new Promise((resolve, reject) => {
-                // verify connection configuration
-                transporter.verify(function (error, success) {
-                    if (error) {
-                        console.log(error);
-                        reject(error);
-                    } else {
-                        console.log("Server is ready to take our messages");
-                        resolve(success);
-                    }
-                });
-            });
-
-            const mailData = {
-                from: process.env.login,
-                to: process.env.emailto,
-                subject: `Message From ${req.body.name}`,
-                text: req.body.message + " | Sent from: " + req.body.email,
-                html: `<div>${req.body.message}</div><p>Sent from: ${req.body.email}</p>`
-            }
-
-            await new Promise((resolve, reject) => {
-                // send mail
-                transporter.sendMail(mailData, (err, info) => {
-                    if (err) {
-                        console.error(err);
-                        reject(err);
-                    } else {
-                        console.log(info);
-                        resolve(info);
-                    }
-                });
-            });
-
-            res.status(200).json({ status: "OK" });
+    mail.send({
+        to: 'fedearasina@gmail.com',
+        from: 'contact.do.not.reply@publicrepublic.art',
+        subject: 'New Message!'+body.name,
+        text: message,
+        html: message.replace(/\r\n/g, '<br>'),
+      }).then(() => {
+        res.status(200).json({ status: 'Ok' });
+      });
 }

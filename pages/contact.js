@@ -6,38 +6,21 @@ import NavBar from "../components/navbar/NavBar";
 
 
 const contact = ({nav}) => {
-  const [name,setName] = useState('');
-  const [email,setEmail] = useState('');
-  const [message,setMessage] = useState('');
-  const [submitted, setSubmitted] = useState('');
 
-  const handleSubmit = (e) =>{
+  async function handleOnSubmit(e) {
     e.preventDefault();
-    console.log("Sending")
-
-    let data = {
-      name,
-      email,
-      message
-    }
-
-    fetch(`/api/contact/`, {
+  
+    const formData = {};
+  
+    Array.from(e.currentTarget.elements).forEach(field => {
+      if ( !field.name ) return;
+      formData[field.name] = field.value;
+    });
+  
+    await fetch('/api/contact', {
       method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      console.log("Response recieved")
-      if(res.status === 200) {
-        console.log("Succes")
-        setSubmitted(true)
-        setName('')
-        setEmail('')
-        setMessage('')
-      }
-    })
+      body: JSON.stringify(formData)
+    });
   }
 
   return (
@@ -75,17 +58,17 @@ const contact = ({nav}) => {
           </div>
 
           <div className='w-full pt-5 lg:pt-0 md:pt-0 md:w-1/3 lg:w-1/3 ml-10 text-left'>
-            <form className='flex flex-col'>
+            <form className='flex flex-col' onSubmit={handleOnSubmit} method="post">
               <div className='mb-4 flex flex-col'>
                 <label htmlFor="name" className='mb-2'>Your name: </label>
-                <input type='text' name='name' onChange={(e) => {setName(e.target.value)}} className="px-3 py-2 border-solid border-2 border-slate-200 rounded-md"
+                <input type='text' name='name' className="px-3 py-2 border-solid border-2 border-slate-200 rounded-md"
                   placeholder="Joe Bloggs"
                 />
               </div>
               
               <div className='mb-4 flex flex-col'>
                 <label htmlFor="email" className='mb-2'>Your Email: </label>
-                <input type='email' name='email' onChange={(e) => {setEmail(e.target.value)}} className="px-3 py-2 border-solid border-2 border-slate-200 rounded-md"
+                <input type='email' name='email' className="px-3 py-2 border-solid border-2 border-slate-200 rounded-md"
                   placeholder="joe.bloggs@example.com"
                   required
                 />
@@ -93,12 +76,12 @@ const contact = ({nav}) => {
 
               <div className='mb-4 flex flex-col'>
                 <label htmlFor="message" className='mb-2'>Message: </label>
-                <textarea name='message' onChange={(e) => {setMessage(e.target.value)}} className="px-3 py-2 border-solid border-2 border-slate-200 rounded-md"
+                <textarea name='message' className="px-3 py-2 border-solid border-2 border-slate-200 rounded-md"
                   placeholder="Text..."
                 />
               </div>
                   
-              <input type='submit' onClick={(e) =>{handleSubmit(e)}} className="px-3 py-2 cursor-pointer bg-neutral-500 text-white hover:bg-neutral-700 rounded-md uppercase font-Roboto tracking-wide"/>
+              <input type='submit' className="px-3 py-2 cursor-pointer bg-neutral-500 text-white hover:bg-neutral-700 rounded-md uppercase font-Roboto tracking-wide"/>
             </form>
           </div>
         </div>

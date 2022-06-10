@@ -1,3 +1,4 @@
+import DropItems from "./DropItems";
 import MenuItems from "./MenuItems";
 const Dropdown = ({ links, dropdown, depthLevel }) => {
     depthLevel = depthLevel + 1;
@@ -5,7 +6,7 @@ const Dropdown = ({ links, dropdown, depthLevel }) => {
     return (
      <ul className={`dropdown text-[10px] ${dropdownClass} ${dropdown ? "show" : ""}`}>
       {links.map(({links, title, target}, key) => (
-        <MenuItems title={title} target={target} links={links} depthLevel={depthLevel} />
+        <DropItems title={title} target={target} links={links} depthLevel={depthLevel} />
       ))}
      </ul>
     );

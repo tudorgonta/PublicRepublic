@@ -18,7 +18,7 @@ const Index = ({category,nav,banner,imag}) => {
         <Hr/>
         <TextContainer/>
         <Hr/>
-        {/*<ListImag imag={imag} />*/}
+        <ListImag imag={imag} />
         <ImageBanner banner={banner}/>
       </div>
     )
@@ -26,7 +26,7 @@ const Index = ({category,nav,banner,imag}) => {
 
 export async function getServerSideProps() {
 
-  const [nav, category, banner, imag] = await Promise.all([
+  const [nav, category, banner, imag, test] = await Promise.all([
     client.fetch(groq`*[_type == 'navigation'][0]{
       title,
       sections[]{
@@ -46,14 +46,14 @@ export async function getServerSideProps() {
       desc,
       mainImage
     }`),
-    client.fetch(groq`*[_type == 'category' && defined(parent)][0..20]{
+    client.fetch(groq`*[_type == 'category' && defined(parent)]{
       imagesGallery[] {
         mainImage {
           asset,
         },
         publishedAt
       }
-    }`)
+    }`),
   ]);
   return {
     props: {

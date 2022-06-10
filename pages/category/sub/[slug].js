@@ -14,7 +14,6 @@ function urlFor (source) {
 }
 
 const Category = ({slug, nav, img}) => {
-  console.log(img)
 
   const categimg = img.imagesGallery != null && img.imagesGallery.map(({mainImage})=> (
     urlFor(mainImage.asset).url()

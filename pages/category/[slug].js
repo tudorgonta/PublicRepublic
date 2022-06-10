@@ -52,16 +52,20 @@ const query = groq`*[_type == "category" && parent->title == $slug]{
 export async function getServerSideProps(context) {
 
   const nav = await client.fetch(groq`*[_type == 'navigation'][0]{
+    title,
+    sections[]{
       title,
-      sections[]{
-        "sectionTitle": title,
+      target,
+      links[]{
+        title,
         target,
         links[]{
-          "subSectionTitle": title,
-          "subtarget": subtarget,
-        }
-      }
-    }`);
+          title,
+          target,
+        },
+      },
+    }
+  }`)
 
   const { slug = "" } = context.params
   const category = await client.fetch(query, { slug })

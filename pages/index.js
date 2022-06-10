@@ -8,6 +8,7 @@ import NavBar from '../components/navbar/NavBar';
 import ListImag from '../components/ListImag';
 
 const Index = ({category,nav,banner,imag}) => {
+  console.log(nav)
     return (
       <div>
         <div className="max-w-screen-xl m-auto">
@@ -30,12 +31,16 @@ export async function getServerSideProps() {
     client.fetch(groq`*[_type == 'navigation'][0]{
       title,
       sections[]{
-        "sectionTitle": title,
+        title,
         target,
         links[]{
-          "subSectionTitle": title,
-          "subtarget": subtarget
-        }
+          title,
+          target,
+          links[]{
+            title,
+            target,
+          },
+        },
       }
     }`), 
     client.fetch(groq`*[_type == 'category' && !defined(parent)][0..5]{

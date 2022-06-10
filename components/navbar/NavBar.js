@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 const NavBar = ({nav}) => {
   const router = useRouter();
   const [isNavOpen, setIsNavOpen] = useState(false);
+  
   return (
     <>
     <nav className='flex justify-center items-center max-w-full my-0 mx-auto h-15 py-0 px-5 mb-2'>
@@ -29,8 +30,8 @@ const NavBar = ({nav}) => {
         </div>
         {/* MENU */}
         <ul className="flex flex-col items-center justify-between min-h-[250px] font-Bulkey">
-          {nav.sections.map(({sectionTitle, target, links}, index)=> {
-            return <MobMenu sectionTitle={sectionTitle} target={target} links={links} key={index} />;
+          {nav.sections.map(({title, target, links}, index)=> {
+            return <MobMenu title={title} target={target} links={links} key={index} />;
           })}
         </ul>
 
@@ -39,8 +40,9 @@ const NavBar = ({nav}) => {
     </section>
 
       <ul className="DESKTOP_MENU hidden lg:flex lg:flex-wrap list-none">
-        {nav.sections.map(({sectionTitle, target, links}, index) => {
-          return <MenuItems sectionTitle={sectionTitle} target={target} links={links} key={index} />;
+        {nav.sections.map(({title, target, links}, index) => {
+          const depthLevel = 0;
+          return <MenuItems title={title} target={target} links={links} key={index} depthLevel={depthLevel} />;
         })}
       </ul>
     </nav>

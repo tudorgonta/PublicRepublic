@@ -32,15 +32,19 @@ const contact = ({nav, video}) => {
 export async function getServerSideProps() {
 
   const nav = await client.fetch(groq`*[_type == 'navigation'][0]{
+    title,
+    sections[]{
       title,
-      sections[]{
-        "sectionTitle": title,
+      target,
+      links[]{
+        title,
         target,
         links[]{
-          "subSectionTitle": title,
-          "subtarget": subtarget,
-        }
-      }
+          title,
+          target,
+        },
+      },
+    }
     }`);
     const video = await client.fetch(groq`*[_type == "videogal"]{
       title,

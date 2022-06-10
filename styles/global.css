@@ -315,7 +315,6 @@
     }
 
     /* Nav-Area */
-        
     .dropdown {
       position: absolute;
       right: 0;
@@ -336,6 +335,11 @@
     
     .dropdown.show {
       display: block;
+    }
+    .dropdown .dropdown-submenu {
+      position: absolute;
+      left: 100%;
+      top: -3px;
     }
 
     /* Hamburger :3 */

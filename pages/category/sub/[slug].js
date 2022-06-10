@@ -76,14 +76,18 @@ export async function getServerSideProps(context) {
   const nav = await client.fetch(groq`*[_type == 'navigation'][0]{
     title,
     sections[]{
-      "sectionTitle": title,
+      title,
       target,
       links[]{
-        "subSectionTitle": title,
-        "subtarget": subtarget,
-      }
+        title,
+        target,
+        links[]{
+          title,
+          target,
+        },
+      },
     }
-  }`);
+  }`)
   const { slug = "" } = context.params
   const img = await client.fetch(groq`*[_type == 'category' && $slug == title][0]{
     imagesGallery[] {

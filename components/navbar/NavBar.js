@@ -29,7 +29,7 @@ const NavBar = ({nav}) => {
           </svg>
         </div>
         {/* MENU */}
-        <ul className="flex flex-col items-center justify-between min-h-[250px] font-Bulkey">
+        <ul className="flex flex-col items-center justify-between min-h-[250px] font-Itim">
           {nav.sections.map(({title, target, links}, index)=> {
             return <MobMenu title={title} target={target} links={links} key={index} />;
           })}

@@ -22,7 +22,7 @@ const DropItems = ({title, target, links, depthLevel }) => {
    }, [dropdown]);
 
  return (
-  <li className="text-[0.65rem] uppercase text-gray-900 relative font-Bulkey tracking-[0.1em]" ref={ref}>
+  <li className="text-[0.65rem] uppercase text-gray-900 relative font-Itim tracking-[0.1em]" ref={ref}>
    {links != null ? (
     <>
      <button 
@@ -32,7 +32,7 @@ const DropItems = ({title, target, links, depthLevel }) => {
         onClick={() => setDropdown((prev) => !prev)}
         className="hover:underline focus:underline py-[0.2rem] px-[2rem] transition-opacity inline-flex items-center bg-transparent cursor-pointer w-full border-none uppercase text-center justify-center"
      >
-      {title}<svg className="w-4 h-4 ml-1 mb-[0.2rem]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+      {title}<svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
      </button>
      <Dropdown 
         links={links}

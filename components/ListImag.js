@@ -44,7 +44,7 @@ const ListImag = ({imag}) => {
 
   return (
     <>
-    <div className="flex justify-center mt-8">
+    <div className="flex justify-center mt-6 mb-2">
       <ul className="flex flex-wrap w-5/6 justify-center">
         {arr.slice(0,4).map((item, index) =>(
           <li className="w-full md:w-1/2 lg:w-[23%] p-2 m-2 border-[3px] border-solid border-gray-200">

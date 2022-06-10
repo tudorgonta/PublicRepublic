@@ -20,6 +20,7 @@ const Index = ({category,nav,banner,imag}) => {
         <TextContainer/>
         <Hr/>
         <ListImag imag={imag} />
+        <Hr/>
         <ImageBanner banner={banner}/>
       </div>
     )

@@ -16,6 +16,7 @@ module.exports = {
         Dancing: ['Dancing Script', 'cursive'],
         Romantica: ['Romantica'],
         Bulkey: ['Bulkey'],
+        Itim: ['Itim', 'cursive'],
        },
     },
   },

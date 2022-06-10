@@ -51,7 +51,7 @@ const ListImag = ({imag}) => {
             <img
               key={index}
               src={urlFor(item.image).quality(40).url()}
-              className="object-cover h-60 w-96 cursor-pointer"
+              className="object-cover h-[40vh] w-full cursor-pointer"
               onClick={() => openLightboxOnSlide(index+1)}
               />
           </li>

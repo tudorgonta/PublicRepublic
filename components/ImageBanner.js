@@ -7,7 +7,6 @@ function urlFor (source) {
 
 const ImageBanner = ({banner}) => {
   const path = urlFor(banner.mainImage).quality(70).url()
-  console.log(path)
   return (
     <div className='w-full pt-12 pb-8'>
         <div className="bg-center bg-no-repeat bg-cover h-[80vh]" style={{backgroundImage: `url(${path})`}}>

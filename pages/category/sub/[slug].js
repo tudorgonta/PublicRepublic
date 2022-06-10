@@ -13,10 +13,11 @@ function urlFor (source) {
   return imageUrlBuilder(client).image(source)
 }
 
-const Category = ({slug, nav, categ}) => {
+const Category = ({slug, nav, img}) => {
+  console.log(img)
 
-  const categimg = categ.imagesGallery != null && categ.imagesGallery.map((index)=> (
-    urlFor(index).url()
+  const categimg = img.imagesGallery != null && img.imagesGallery.map(({mainImage})=> (
+    urlFor(mainImage.asset).url()
   ))
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
@@ -29,21 +30,22 @@ const Category = ({slug, nav, categ}) => {
     slide: number
     });
   }
-  console.log(categ.imagesGallery)
+  
   return (
     <>
       <Head>
         <title>PR - {slug}</title>
       </Head>
       <NavBar nav={nav} />
+      
       <ul className='categ'>
-        {categ.imagesGallery != null ? (
+        {img.imagesGallery != null ? (
           <>
-          {categ.imagesGallery.map((image, index) => (
+          {img.imagesGallery.map(({mainImage}, index) => (
             <li className='categ-item'>
                 <img
                   key={index}
-                  src={urlFor(image).quality(40).url()}
+                  src={urlFor(mainImage.asset).quality(40).url()}
                   onClick={() => openLightboxOnSlide(index+1)}
                 />
             </li>
@@ -66,6 +68,7 @@ const Category = ({slug, nav, categ}) => {
         }
         key={lightboxController.key}
       />
+      
     </>
   )
 }
@@ -83,17 +86,18 @@ export async function getServerSideProps(context) {
     }
   }`);
   const { slug = "" } = context.params
-  const categ = await client.fetch(groq`*[_type == "category" && $slug == title][0]{
-    title,
-    imagesGallery[]{
-      ...,
-    },
+  const img = await client.fetch(groq`*[_type == 'category' && $slug == title][0]{
+    imagesGallery[] {
+      mainImage {
+        asset
+      }
+    }
   }`, {slug})
   return {
     props: {
         slug,
         nav,
-        categ
+        img
     }
   }
 }

@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
   : 
   <>
     <Head>
-      <title>PublicRepublic</title>
+      <title>PR - Home</title>
       <link rel="shortcut icon" href="/static/pr.png" />
     </Head> 
     <div className="w-screen m-auto">

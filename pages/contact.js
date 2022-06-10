@@ -25,7 +25,7 @@ const contact = ({nav}) => {
   return (
     <>
       <Head>
-        <title>PR - Contact Us</title>
+        <title>PR - Contact</title>
       </Head>
       <NavBar nav={nav} />
       <div className='w-5/6 m-auto text-center font-Rubik '>

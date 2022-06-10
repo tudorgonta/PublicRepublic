@@ -8,7 +8,7 @@ const contact = ({nav, video}) => {
   return (
     <>
       <Head>
-        <title>PR - Contact Us</title>
+        <title>PR - Video Gallery</title>
       </Head>
       <NavBar nav={nav} />
       <div className='w-5/6 flex flex-col items-center flex-wrap md:flex-row m-auto justify-evenly mt-10 mb-5'>

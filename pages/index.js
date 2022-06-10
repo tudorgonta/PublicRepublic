@@ -5,8 +5,9 @@ import Hr from '../components/Hr';
 import ImageBanner from '../components/ImageBanner';
 import TextContainer from '../components/TextContainer';
 import NavBar from '../components/navbar/NavBar';
+import ListImag from '../components/ListImag';
 
-const Index = ({category,nav,banner}) => {
+const Index = ({category,nav,banner,imag}) => {
     return (
       <div>
         <div className="max-w-screen-xl m-auto">
@@ -17,6 +18,7 @@ const Index = ({category,nav,banner}) => {
         <Hr/>
         <TextContainer/>
         <Hr/>
+        {/*<ListImag imag={imag} />*/}
         <ImageBanner banner={banner}/>
       </div>
     )
@@ -24,7 +26,7 @@ const Index = ({category,nav,banner}) => {
 
 export async function getServerSideProps() {
 
-  const [nav, category, banner] = await Promise.all([
+  const [nav, category, banner, imag] = await Promise.all([
     client.fetch(groq`*[_type == 'navigation'][0]{
       title,
       sections[]{
@@ -43,13 +45,22 @@ export async function getServerSideProps() {
     client.fetch(groq`*[_type == 'banner'][0]{
       desc,
       mainImage
+    }`),
+    client.fetch(groq`*[_type == 'category' && defined(parent)][0..20]{
+      imagesGallery[] {
+        mainImage {
+          asset,
+        },
+        publishedAt
+      }
     }`)
   ]);
   return {
     props: {
       nav,
       category,
-      banner
+      banner,
+      imag
     }
   }
 }

@@ -21,7 +21,7 @@
   <li><strike>Add dontenv to contact + security true + vercel sett env variables</strike></li>
   <li><strike>Sub Categ Video add</strike></li>
   <li><strike>Reponsive update(no carousel, list images with title in flex + navbar hamburger)</strike></li>
-  <li>Change carousel to 1 slide</li>
+  <li><strike>Change carousel to 1 slide</strike></li>
   <h3>Update 2.0</h3>
   <li>Add SEO optimization</li>
   <li>Add Google Analitycs</li>

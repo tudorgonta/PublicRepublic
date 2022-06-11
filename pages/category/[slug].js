@@ -29,7 +29,7 @@ const Category = ({category, slug, nav}) => {
                 src={urlFor(postImage).quality(40).url()}
                 alt={title}
               />
-              <a href={`sub/${encodeURIComponent(title)}`} className="flex h-full w-full align-middle aspect-square absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-zinc-500/[0.4] z-10">
+              <a href={`sub/${encodeURIComponent(title)}`} className="flex h-full w-full align-middle aspect-square absolute top-0 left-0 bg-zinc-400/[0.2] opacity-60 z-10 transition-opacity duration-300 hover:opacity-80 hover:bg-black/[0.6]">
                 <h3 className="text-white text-xl m-auto uppercase font-Roboto">
                     {title}
                 </h3>

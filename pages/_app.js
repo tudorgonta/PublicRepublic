@@ -7,14 +7,26 @@ import SvgComponent from '../components/svg';
 function MyApp({ Component, pageProps }) {
 
   const [isLoading, setIsLoading] = useState(true);
+  const [faviconHref, setFaviconHref] = useState("/favicon-light.png");
+
+  const getFaviconPath = (isDarkMode = false) => {
+    return `/static/favicon-${isDarkMode ? "dark" : "light"}.png`;
+  };
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
+    // Get current color scheme.
+    const matcher = window.matchMedia("(prefers-color-scheme: dark)");
+    // Set favicon initially.
+    setFaviconHref(getFaviconPath(matcher.matches));
+    // Change favicon if the color scheme changes.
+    matcher.onchange = () => setFaviconHref(getFaviconPath(matcher.matches));
   }, []);
 
-  return <>{isLoading ? 
+  return <>
+  {isLoading ? 
   <div className="flex h-screen">
     <div className='m-auto'>
     <svg role="status" className="w-14 h-14 text-gray-500 animate-spin  fill-gray-200 " viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +39,7 @@ function MyApp({ Component, pageProps }) {
   <>
     <Head>
       <title>PR - Home</title>
-      <link rel="shortcut icon" href="/static/pr.png" />
+      <link rel="shortcut icon" href={faviconHref} />
     </Head> 
     <div className="w-screen m-auto">
       <div className='hidden md:flex justify-center mb-[-3.5rem] -my-10'>

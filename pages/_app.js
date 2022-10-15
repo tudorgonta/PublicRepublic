@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
       setIsLoading(false);
     }, 2000);
     // Get current color scheme.
-    const matcher = window.matchMedia("(prefers-color-scheme: dark)");
+    const matcher = window.matchMedia("(prefers-color-scheme: light)");
     // Set favicon initially.
     setFaviconHref(getFaviconPath(matcher.matches));
     // Change favicon if the color scheme changes.
